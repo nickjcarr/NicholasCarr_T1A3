@@ -1,0 +1,32 @@
+# eps = 0
+# amount_of_shares = 0
+# earnings_per_share = 0
+class Shares 
+    attr_reader :earnings, :number_of_shares, :share_price
+
+    def initialize(earnings, number_of_shares, share_price)
+        @earnings = earnings
+        @number_of_shares = number_of_shares
+        @share_price = share_price
+        @earnings_per_share_calculation = []
+
+    end
+
+def earnings_per_share(earnings, number_of_shares)
+
+earnings_per_share_calculation = earnings/number_of_shares
+
+
+end
+
+def pe_ratio(share_price, earnings_per_share)
+
+share_price/earnings_per_share
+    
+end
+
+end
+
+puts earnings_per_share.earnings_per_share_calculation(500, 100)
+puts pe_ratio(earnings_per_share_calculation, 5)
+
