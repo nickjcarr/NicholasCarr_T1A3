@@ -23,3 +23,6 @@ pe_ratio = companies["#{@company}"][1] / eps_array=[0]
 # end
 
 
+# def eps_number(earnings, share_amount)
+#     companies["#{@company}"][0]/companies["#{@company}"][2]
+# end
