@@ -1,51 +1,32 @@
-class Shares 
-    attr_accessor :earnings, :number_of_shares, :share_price, :company, :earnings_per_share_calculation
+puts "please enter company name: "
+@name = gets.strip.to_s.downcase
+# company = companies[company_name]
+# p company.calculate_EPS
+class Company
+    attr_reader :name, :earnings, :share_price
 
-    def initialize(company)
-        @company = company
+    def initialize(name, earnings, share_amount, share_price)
+        @name = name
         @earnings = earnings
-        @number_of_shares = number_of_shares
+        @share_amount = share_amount
         @share_price = share_price
-        @earnings_per_share_calculation = [] #this will hold the eps after (earnings / share amount)
-
-    end
-    def company_is_in_database("#{@company}")
-        if companies.has_key?("#{@company}") != true 
-            puts "I am sorry, we found no result for #{@company}"
-        else
-            puts "We are currently searching for the latest data on #{@company}"
-        end
-        
-    end
-def share_price_number
-    @share_price
-end
-
-    def earnings_number
-        @earnings
-    end
-    def number_of_shares_amount
-        @number_of_shares
     end
 
-
-end
-
-search_company = Shares.new("Tesla")
-puts search_company.company_name
-
-# def earnings_per_share(earnings, number_of_shares)
-
-#  number = @earnings/@number_of_shares
-#  puts "the earnings per share is #{number}."
-
-
-# end
-
-# def pe_ratio(share_price, earnings_per_share)
-
-# share_price/earnings_per_share
+    companies = 
+    {
+        "tesla" => Company.new("tesla", 100, 40, 10),
+        "goog" => Company.new("google", 200, 10, 5),
+        "nike" => Company.new("nike", 300, 20, 15)
+    }
     
-# end
+    if companies.has_key?("#{@name}") == true
+        puts "true"
+    else
+        puts "false"
+    end
+    def calculate_EPS()
+        return @earnings / @share_amount
+    end
+end
 
-# end
+
