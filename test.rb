@@ -18,7 +18,7 @@ puts eps_array << eps
 puts eps_array[0].class
 puts companies["#{@company}"][1].class
 
-pe_ratio = companies["#{@company}"][1] / eps_array=[0]
+# pe_ratio = companies["#{@company}"][1] / eps_array=[0]
 # puts pe_ratio
 # end
 

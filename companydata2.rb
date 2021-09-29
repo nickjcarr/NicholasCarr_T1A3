@@ -1,12 +1,26 @@
-puts "Which company?"
-company = gets.chomp.to_s
+
+#a list of all the companies and their data, which is searched to see if the company exists in our collected data
+
+# companies = 
+# {
+#     "tesla" => Company.new("tesla", 100, 40, 10),
+#     "goog" => Company.new("google", 200, 10, 5),
+#     "nike" => Company.new("nike", 300, 20, 15)
+# }
 
 
-companies = {
+@companies = {
     "tesla" => [1000000, 75,100000 ],
     "microsoft" => [2000000, 100,200000 ]
 }
+puts "which company?"
+@company = gets.strip.to_s
 
 
 
-puts companies["tesla"][0]
+# def search_list(companies)
+if @companies.has_key?("#{@company}") != true 
+    puts "I am sorry, we found no result for #{@company}"
+else
+    puts "We are currently searching for the latest data on #{@company}"
+end
