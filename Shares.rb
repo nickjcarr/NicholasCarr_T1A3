@@ -8,15 +8,15 @@ class Company
     attr_accessor :name, :earnings, :share_price, :eps, :pe_ratio, :last_year_price
 
     def initialize(name, earnings, share_amount, share_price, last_year_price)
-        @@name = name
-        @@earnings = earnings
+        @name = name
+        @earnings = earnings
         @share_amount = share_amount
         @share_price = share_price
         @last_year_price = last_year_price
-        @eps = @@earnings / @share_amount
+        @eps = @earnings / @share_amount
         @pe_ratio = @share_price / @eps
     end
-end
+
 
 def welcomemenu()
         
@@ -38,26 +38,19 @@ def welcomemenu()
  case choice
  when 1
     puts "Please enter the company name you would like to know the share price of: "
-    @@name = gets.strip.downcase
+    @name = gets.strip.downcase
     # if companiesss.include?("#{@@name}") 
-        puts "#{@@name}".earnings
+        puts "#{@name}".earnings
     else
         puts "no"
     end
-    
+end
 end
 tesla = Company.new("tesla", 100, 40, 5, 3)
 apple = Company.new("apple", 100, 20, 3, 6)
+microsoft = Company.new("microsoft", 800, 30, 10, 8)
+p microsoft.earnings
+p microsoft.eps
 
-# puts tesla.earnings
-# puts apple.eps
-# puts tesla.pe_ratio
-# puts apple.pe_ratio
 
-# companies = 
-# {
-#     "tesla" => Company.new("tesla", 100, 40, 10),
-#     "goog" => Company.new("google", 200, 10, 5),
-#     "nike" => Company.new("nike", 300, 20, 15)
-# }
 

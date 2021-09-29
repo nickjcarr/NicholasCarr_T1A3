@@ -1,3 +1,3 @@
 require_relative 'Shares'
 
-welcomemenu
+Company.welcomemenu
