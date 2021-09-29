@@ -1,28 +1,47 @@
-puts "which company?"
-@company = gets.strip.to_s
+require_relative "company_data"
+require_relative "Shares"
 
-companies = {
-    "tesla" => [1000000, 75,100000 ],
-    "microsoft" => [2000000, 100,200000 ]
-}
-eps_array=[]
-# def search_list(companies)
-if companies.has_key?("#{@company}") != true 
-    puts "I am sorry, we found no result for #{@company}"
-else
-    puts "We are currently searching for the latest data on #{@company}"
+    def welcomemenu()
+        
+    puts "Welcome to Stock Watch, an application that lets you find the value of a stock"
+
+
+    print "What can we call you? "
+    @first_name = gets.strip
+
+   
+ puts "#{@first_name} please choose one of the following options: "
+ puts 
+ puts "1- View a stock price of a company."
+ puts "2- See our recommendation of a stocks P/E, and if it is a good investment."
+ puts "3- view the stocks history from one year ago until today."
+ puts "4- Exit."
+
+ choice = gets.to_i
+ case choice
+ when 1
+    puts "Please enter the company name you would like to know the share price of: "
+    @@name = gets.strip.downcase
+    # if companiesss.include?("#{@@name}") 
+        puts "#{@@name}".earnings
+    else
+        puts "no"
+    end
+    
+
+
+
+# when 2
+#     puts "Please enter the company name that you would like to know the PE ratio of: "
+# end
+# when 3
+#     puts "Please enter the company name that you would like to know the price history of: "
+# end
+# when 4
+    
+# end
+
 end
-eps = companies["#{@company}"][0].to_i/companies["#{@company}"][2]
-
-puts eps_array << eps
-puts eps_array[0].class
-puts companies["#{@company}"][1].class
-
-# pe_ratio = companies["#{@company}"][1] / eps_array=[0]
-# puts pe_ratio
-# end
 
 
-# def eps_number(earnings, share_amount)
-#     companies["#{@company}"][0]/companies["#{@company}"][2]
-# end
+
