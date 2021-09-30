@@ -15,9 +15,10 @@ require_relative 'Shares'
 @companies[:amazon] = Company.new("amazon", 200, 140, 50, 13)
 @companies[:tesla] = Company.new("tesla", 100, 40, 8, 3)
 
-search = ["tesla", "amazon"]
+@search = ["tesla", "amazon"]
+
 def welcomemenu()
-        
+    
     puts "Welcome to Stock Watch, an application that lets you find the value of a stock"
 
 
@@ -39,11 +40,13 @@ def welcomemenu()
  when 1
     puts "Please enter the company name you would like to know the share price of: "
     name = gets.strip.downcase
-    # if companiesss.include?("#{@@name}") 
-    if search.include?("#{name}") == false
-        puts "sorry"
+    
+    until @search.include?("#{name}") == true
+        puts "Sorry, it seems that we do not have the company in our data. Please enter another company"
+        name = gets.strip.downcase
+    end
     else
-   puts  @companies[name.to_sym].share_price
+   puts  "The current share price of ""#{name} is $ ""#{@companies[name.to_sym].share_price}"
 
     end
 when 2 
