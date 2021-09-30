@@ -1,26 +1,33 @@
 require_relative 'Shares'
 
-tesla = Company.new("tesla", 100, 40, 5, 3)
-apple = Company.new("apple", 100, 20, 3, 6)
-microsoft = Company.new("microsoft", 800, 30, 10, 8)
+
+
+
+# ford = Company.new("ford", 20, 60, 80, 70)
 # p microsoft.earnings
 # p microsoft.eps
 
 
 
-@companies = {tesla: tesla, apple: apple, microsoft: microsoft}
+@companies = { }
 @companies[:dell] = Company.new("dell", 100, 40, 5, 3)
+@companies[:ford] = Company.new("ford", 100, 40, 8, 3)
+@companies[:amazon] = Company.new("amazon", 200, 140, 50, 13)
+@companies[:tesla] = Company.new("tesla", 100, 40, 8, 3)
 
+search = ["tesla", "amazon"]
 def welcomemenu()
         
     puts "Welcome to Stock Watch, an application that lets you find the value of a stock"
 
 
     print "What can we call you? "
-    @first_name = gets.strip
-
-   
- puts "#{@first_name} please choose one of the following options: "
+    first_name = gets.strip
+    until first_name != ""
+        puts "We would love to know your name"
+        first_name = gets.strip
+    end
+ puts "#{first_name} please choose one of the following options: "
  puts 
  puts "1- View a stock price of a company."
  puts "2- See our recommendation of a stocks P/E, and if it is a good investment."
@@ -33,10 +40,25 @@ def welcomemenu()
     puts "Please enter the company name you would like to know the share price of: "
     name = gets.strip.downcase
     # if companiesss.include?("#{@@name}") 
-        puts  @companies[name.to_sym].earnings
- end
-    
+    if search.include?("#{name}") == false
+        puts "sorry"
+    else
+   puts  @companies[name.to_sym].share_price
 
+    end
+when 2 
+    puts "Please enter the company name that you would like to know the PE ratio of: "
+    name = gets.strip.downcase
+    puts  @companies[name.to_sym].eps
+when 3 
+    puts "Please enter the company name you would like to know the price history of: "
+    name = gets.strip.downcase
+    puts   @companies[name.to_sym].pe_ratio
+else
+    exit
+    
+    
+end
 # when 2
 #     puts "Please enter the company name that you would like to know the PE ratio of: "
 #     name = gets.strip.downcase
@@ -52,5 +74,6 @@ def welcomemenu()
     
 # end
 
+end
 
 welcomemenu

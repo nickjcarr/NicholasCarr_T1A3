@@ -5,7 +5,7 @@
 # # company = companies[company_name]
 # # p company.calculate_EPS
 class Company
-    attr_accessor :name, :earnings, :share_price, :eps, :pe_ratio, :last_year_price
+    attr_accessor :name, :earnings, :share_price, :eps, :pe_ratio, :last_year_price, :share_amount
 
     def initialize(name, earnings, share_amount, share_price, last_year_price)
         @name = name
@@ -56,16 +56,16 @@ end
 # # end
 # end
 # end
-tesla = Company.new("tesla", 100, 40, 5, 3)
-apple = Company.new("apple", 100, 20, 3, 6)
-microsoft = Company.new("microsoft", 800, 30, 10, 8)
-# p microsoft.earnings
-# p microsoft.eps
+# tesla = Company.new("tesla", 100, 40, 5, 3)
+# apple = Company.new("apple", 100, 20, 3, 6)
+# microsoft = Company.new("microsoft", 800, 30, 10, 8)
+# # p microsoft.earnings
+# # p microsoft.eps
 
 
 
-companies = {tesla: tesla, apple: apple, microsoft: microsoft}
-companies[:dell] = Company.new("dell", 100, 40, 5, 3)
+# companies = {tesla: tesla, apple: apple, microsoft: microsoft}
+# companies[:dell] = Company.new("dell", 100, 40, 5, 3)
 # pp companies[:tesla].earnings
 
 # user_input = 'dell'
