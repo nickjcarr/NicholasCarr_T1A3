@@ -9,3 +9,4 @@
 # }
 # companies.has_key?("tesla")
 
+@companiesss = ["tesla"]

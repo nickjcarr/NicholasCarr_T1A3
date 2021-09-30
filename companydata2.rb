@@ -9,10 +9,7 @@
 # }
 
 
-@companies = {
-    "tesla" => [1000000, 75,100000 ],
-    "microsoft" => [2000000, 100,200000 ]
-}
+
 puts "which company?"
 @company = gets.strip.to_s
 
