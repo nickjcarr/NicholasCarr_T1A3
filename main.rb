@@ -14,8 +14,9 @@ require_relative 'Shares'
 @companies[:ford] = Company.new("ford", 100, 40, 8, 3)
 @companies[:amazon] = Company.new("amazon", 200, 140, 50, 13)
 @companies[:tesla] = Company.new("tesla", 100, 40, 8, 3)
+@companies[:google] = Company.new("google", 500, 80, 18, 23)
 
-@search = ["tesla", "amazon"]
+@search = ["tesla", "amazon", "google"]
 
 def welcomemenu()
     
@@ -24,6 +25,7 @@ def welcomemenu()
 
     print "What can we call you? "
     first_name = gets.strip
+    system("clear")
     until first_name != ""
         puts "We would love to know your name"
         first_name = gets.strip
@@ -36,47 +38,53 @@ def welcomemenu()
  puts "4- Exit."
 
  choice = gets.to_i
+#  until choice == 1..4
+#     puts "no"
+#     choice = gets.strip.to_i
+# end
  case choice
  when 1
     puts "Please enter the company name you would like to know the share price of: "
     name = gets.strip.downcase
     
-    until @search.include?("#{name}") == true
-        puts "Sorry, it seems that we do not have the company in our data. Please enter another company"
+    until @search.include?("#{name}") != false 
+        puts "Sorry, it seems that we do not have " "#{name}" " in our data. Please enter another company"
         name = gets.strip.downcase
     end
-    else
-   puts  "The current share price of ""#{name} is $ ""#{@companies[name.to_sym].share_price}"
 
-    end
+   puts  "The current share price of ""#{name}" " is $ ""#{@companies[name.to_sym].share_price}"
+
+    
+    
+
 when 2 
     puts "Please enter the company name that you would like to know the PE ratio of: "
     name = gets.strip.downcase
-    puts  @companies[name.to_sym].eps
+    
+
+    until @search.include?("#{name}") != false 
+        puts "Sorry, it seems that we do not have " "#{name}" " in our data. Please enter another company"
+        name = gets.strip.downcase
+    end
+ puts  "The PE ratio of ""#{name}"" is $ ""#{@companies[name.to_sym].pe_ratio}"
+
 when 3 
     puts "Please enter the company name you would like to know the price history of: "
     name = gets.strip.downcase
-    puts   @companies[name.to_sym].pe_ratio
+    
+    until @search.include?("#{name}") != false 
+        puts "Sorry, it seems that we do not have " "#{name}" " in our data. Please enter another company"
+        name = gets.strip.downcase
+    end
+ puts  "The PE ratio of ""#{name}"" is $ ""#{@companies[name.to_sym].pe_ratio}"
+
 else
     exit
     
     
 end
-# when 2
-#     puts "Please enter the company name that you would like to know the PE ratio of: "
-#     name = gets.strip.downcase
-#     puts  @companies[name.to_sym].earnings
-# else
-#     puts "no"
-
-
-# when 3
-#     puts "Please enter the company name that you would like to know the price history of: "
-# end
-# when 4
-    
-# end
 
 end
+
 
 welcomemenu
