@@ -1,6 +1,6 @@
 require_relative 'Shares'
 
-
+require 'colorize'
 require 'artii'
 
 # ford = Company.new("ford", 20, 60, 80, 70)
@@ -19,8 +19,12 @@ require 'artii'
 @search = ["tesla", "amazon", "google", "dell"]
 
 def welcomemenu()
+    a = Artii::Base.new
+    a.asciify('Stock Watch')
+    puts a.asciify("Stock Watch")
     
-    puts "Welcome to Stock Watch, an application that lets you find the value of a stock"
+    
+    puts "Welcome to Stock Watch, an application that lets you find the value of a stock".blue 
 
 
     print "What can we call you? "
