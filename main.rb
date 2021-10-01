@@ -1,7 +1,7 @@
 require_relative 'Shares'
 
 
-
+require 'artii'
 
 # ford = Company.new("ford", 20, 60, 80, 70)
 # p microsoft.earnings
@@ -16,7 +16,7 @@ require_relative 'Shares'
 @companies[:tesla] = Company.new("tesla", 100, 40, 8, 3)
 @companies[:google] = Company.new("google", 500, 80, 18, 23)
 
-@search = ["tesla", "amazon", "google"]
+@search = ["tesla", "amazon", "google", "dell"]
 
 def welcomemenu()
     
@@ -38,10 +38,7 @@ def welcomemenu()
  puts "4- Exit."
 
  choice = gets.to_i
-#  until choice == 1..4
-#     puts "no"
-#     choice = gets.strip.to_i
-# end
+
  case choice
  when 1
     puts "Please enter the company name you would like to know the share price of: "
@@ -54,8 +51,17 @@ def welcomemenu()
 
    puts  "The current share price of ""#{name}" " is $ ""#{@companies[name.to_sym].share_price}"
 
-    
-    
+   puts "Would you like to choose another feature? - #{"Type Yes/No"}"
+   answer = gets.strip
+   case (answer)
+   when "yes"
+       system("clear")
+       load "main.rb"
+
+   when "no"
+       puts "Thank you for using Stock Watch services"
+       exit
+   end
 
 when 2 
     puts "Please enter the company name that you would like to know the PE ratio of: "
@@ -67,7 +73,17 @@ when 2
         name = gets.strip.downcase
     end
  puts  "The PE ratio of ""#{name}"" is $ ""#{@companies[name.to_sym].pe_ratio}"
+ puts "Would you like to choose another feature? - #{"Type Yes/No"}"
+   answer = gets.strip
+   case (answer)
+   when "yes"
+       system("clear")
+       load "main.rb"
 
+   when "no"
+       puts "Thank you for using Stock Watch services"
+       exit
+   end
 when 3 
     puts "Please enter the company name you would like to know the price history of: "
     name = gets.strip.downcase
@@ -76,15 +92,21 @@ when 3
         puts "Sorry, it seems that we do not have " "#{name}" " in our data. Please enter another company"
         name = gets.strip.downcase
     end
- puts  "The PE ratio of ""#{name}"" is $ ""#{@companies[name.to_sym].pe_ratio}"
+  
+puts  "The difference between"" #{name}" " share price one year ago and today is ""#{@companies[name.to_sym].history_percentage}" "%."
+puts "Would you like to choose another feature? - #{"Type Yes/No"}"
+answer = gets.strip
+case (answer)
+when "yes"
+    system("clear")
+    load "main.rb"
 
+when "no"
+    puts "Thank you for using Stock Watch services"
+    exit
+end
 else
     exit
-    
-    
 end
-
 end
-
-
 welcomemenu
