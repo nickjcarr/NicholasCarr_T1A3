@@ -6,15 +6,14 @@ require 'artii'
 
 
 @companies = { }
-# @companies[:dell] = Company.new("dell", 100, 4, 7, 2)
-# @companies[:ford] = Company.new("ford", 100, 40, 8, 3)
-# @companies[:amazon] = Company.new("amazon", 200, 140, 50, 13)
-# @companies[:tesla] = Company.new("tesla", 100, 40, 8, 3)
-# @companies[:google] = Company.new("google", 50, 80, 18, 23)
-# @companies[:holden] = Company.new("holden", 40, 40, 48, 43)
-@companies[:nick] = Company.new("nick", 100, 50, 30, 10)
-
-@search = ["nick"]
+@companies[:dell] = Company.new("dell", 100, 4, 7, 3)
+@companies[:ford] = Company.new("ford", 100, 40, 8, 3)
+@companies[:amazon] = Company.new("amazon", 200, 140, 50, 13)
+@companies[:tesla] = Company.new("tesla", 100, 40, 8, 3)
+@companies[:google] = Company.new("google", 500, 80, 18, 23)
+@companies[:holden] = Company.new("holden", 400, 40, 48, 43)
+@companies[:fortescue] = Company.new("fortescue", 10300000000, 3078929306, 14.57, 16.08)
+@search = ["tesla", "amazon", "google", "dell", "holden", "fortescue"]
 
 def welcomemenu()
     a = Artii::Base.new
@@ -23,7 +22,7 @@ def welcomemenu()
     
     
     puts "Welcome to Stock Watch, an application that lets you find the value of a stock".blue 
-puts "DISCLAIMER!!! Investing is risky. The information we provide is for education purposes only. Any opinions we give our ours, and ours alone. Use of our information is done at ones own will."
+puts "DISCLAIMER!!! Investing is risky. The information we provide is for education purposes only. \n Any opinions we give our ours, and ours alone. Use of our information is done at ones own will."
 
     print "Please enter your name: "
     first_name = gets.strip
@@ -100,7 +99,7 @@ when 3
         name = gets.strip.downcase
     end
   
-puts  "The difference between"" #{name}" " share price one year ago and today is ""#{@companies[name.to_sym].history_percentage}" "%."
+puts  "One year ago today, the price of #{name} was #{@companies[name.to_sym].last_year_price}. Today is is #{@companies[name.to_sym].share_price}. The difference is #{@companies[name.to_sym].history_percentage} %."
 puts "Would you like to choose another feature? - #{"Type Yes/No"}"
 answer = gets.strip
 case (answer)
