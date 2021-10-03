@@ -1,6 +1,6 @@
 
 class Company
-    attr_accessor :name, :earnings, :share_price, :eps, :pe_ratio, :last_year_price, :share_amount, :history_percentage
+    attr_reader :name, :earnings, :share_price, :eps, :pe_ratio, :last_year_price, :share_amount, :history_percentage
 
     def initialize(name, earnings, share_amount, share_price, last_year_price)
         @name = name
