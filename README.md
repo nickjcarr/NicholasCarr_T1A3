@@ -33,7 +33,18 @@ Once the name is entered, the user is given the message to choose from the follo
 When choosing 1, 2 or 3 the user is asked to enter the company name they would like to research. If a company is entered that is not in the database, the message “sorry, it seems that we do not have #{name} in our data. Please enter another company” will appear. This will continue to appear until a company in our database is entered. 
 Once a company within our database is entered, the information is displayed, and the option to go back to the main menu is presented. If no is selected, it simply thanks the user for using our services and exits the application.
 
+## R8 flow diagram
+My flow diagram can be found in the image below
+![flow diagram](/Docs/images/R8.png)
+
+## R9 Implementation plan
+My implementation plan was documented on trello.com
+(https://trello.com/b/3dmdnnmd/t1a3)
+
 ## R10
 This application is very straightforward in terms of using it. The only gems I used were colorize, which was installed by the command gem install colorize. The other gem I used was artii, a gem which creates ascii art using gem install artii. I have included the gem files so the user will not need to install them, however if it is not working, the above commands can simply be installed. 
 As I created a script in the bash file, this can simply be run by typing ./run_app.sh in the command line, or main.rb. As this is a command line application, the installation of Linux ubuntu is needed to run the application. As I have only loaded data from 20 tech companies for the user to utilise, is is recommended to try a search for facebook, google or tesla to get a result you are after. A connection to an API is my long term goal for this application.
 
+## R17 Testing
+The testing was recorded on a spreadsheet and can be found in the image below
+![testing results](/Docs/images/testing.png)

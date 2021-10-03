@@ -1,0 +1,125 @@
+commit 95ee287744aa512d239312a328b660c83f2ac0bc
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Sun Oct 3 14:48:09 2021 +0800
+
+    uploaded all the companies that i will use for their data
+
+commit 266e6ac646189782e9e42de39ddbc24996f2a0cd
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Sun Oct 3 12:45:13 2021 +0800
+
+    conducted some tests to make sure that the application is working, giving expected errors. this is a great way to know how it all woks together
+
+commit 23bfabc46ac294fd293df9ac58b076d07632cbfa
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Sun Oct 3 10:24:54 2021 +0800
+
+    adding more comments to the code to make is eaeier for others to read, adn to remind me of what i was doing at certain points and why
+
+commit bd22c2b4e2f0634fb2c5151fbdf922705b0a8f03
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Sat Oct 2 14:33:32 2021 +0800
+
+    adding more data for the companies. Taking quite a while as I am not using an API
+
+commit 371c522d8f224f172669ff9240014a6ff485e4a3
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Sat Oct 2 12:57:40 2021 +0800
+
+    adjusted the third feature to include better wording and syntax to make it look more presentable when output displayed
+
+commit ec122f48fcc2f9f7d40b2bc6747630cc7787311e
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Fri Oct 1 14:45:15 2021 +0800
+
+    have started adding more companies data. encountered a problem in relation to changing the data of a company once it has been entered. trying to problem solve this
+
+commit 6eeb093842cb27de54abf5674d1eaece0f029a7b
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Fri Oct 1 12:50:39 2021 +0800
+
+    added ascii art and colorize gem to make more user friendly and appealing. still need to decide which colours suit the app best
+
+commit bd79555f1d64e150e59775fd090e282c2c00cf08
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Fri Oct 1 11:51:56 2021 +0800
+
+    finished the wehn/case staements which connect input data to data the user needs in the main file. also added an option to go back to main menu after using a feature.
+
+commit d89d1fde3f418a092bb6ca94d40c10a8c3a0568e
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Thu Sep 30 21:54:59 2021 +0800
+
+    finally figured out the main file case/when statement without any errors. turns out i should not have an end at the end of each. still need to finalise the calculations for final feature
+
+commit 7d1ae3c69c2ab20821a89ce15cda69d07397c6f8
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Thu Sep 30 17:48:59 2021 +0800
+
+    figured out how to add comments around the return value in main file. Started to extend the case/when statements so it has more rules
+
+commit 35edbc0014dd2fc7c715b219e68de527c442bc58
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Thu Sep 30 14:04:18 2021 +0800
+
+    adding extra control flows to the case/when statement to try and make it more strict. trying with an array to see if it exists, not sure it will work, so far it hasnt
+
+commit 4a61c27c7de973be6c0e7784087cf05feee98802
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Thu Sep 30 09:44:07 2021 +0800
+
+    figured out how to store the company information and access it thanks to the help of Iryna. snded up storing it in an array when creating the instance class
+
+commit 45b0e9b6ba193c8adc51d3e06f4b68699aecd0e0
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Wed Sep 29 19:31:06 2021 +0800
+
+    put the welcomemenu method in the Company class to try and use the instant variables values, unsuccessful so will try another way
+
+commit 1961ef855e0b2a3b8b9ad606f38d5908d7c06e92
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Wed Sep 29 18:06:43 2021 +0800
+
+    i merged the welcome comment into the Company class, seems to run fine but cannot access data from variables. need to trouble shoot this
+
+commit 488549924b78a6c4883e8bdf45b027c9b3e10602
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Wed Sep 29 16:06:56 2021 +0800
+
+    still struggling with making my methods and main page line up. have decided to make intro menu with standard case statement. cannot workout pe ratio equation
+
+commit 8ae9651f56260362e3088777bb537dceaf3e97b8
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Tue Sep 28 16:14:51 2021 +0800
+
+    after some much needed help from James I was able to sort out my algoithm for the share evaluation and variables. also half way done on the first input part of the assignment where it will loop until input is detected
+
+commit f17157b2ebc0a94d4863b84e5b06529a9f3ff05a
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Tue Sep 28 11:25:12 2021 +0800
+
+    making the shares class with all the attributes, still trying to figure out the calculation and how to include the data stored in a hash
+
+commit d9c8b42a72cb9dfea0c140b4aa52027fe8411f26
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Mon Sep 27 21:48:35 2021 +0800
+
+    many things not working for me as I try to figure out how to put the classes together, the main page isnt printing out the methods I created, more study to be done
+
+commit fdb9849ff69521af10ca91fb7a7a2ca004b6dd5f
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Mon Sep 27 13:35:12 2021 +0800
+
+    created company algorithm to access data from array and put it into an equation. no perfected yet
+
+commit f4a24eebf49511e4672a64e9b258aa62dcc97f66
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Mon Sep 27 11:09:51 2021 +0800
+
+    creation of main file and exploring the way to make a block for my earnings per share formula
+
+commit 1785bf2ca93b0eb87ae00d54b7b53f6c7ffcefa8
+Author: nickjcarr <89064299+nickjcarr@users.noreply.github.com>
+Date:   Mon Sep 27 08:57:37 2021 +0800
+
+    Initial commit

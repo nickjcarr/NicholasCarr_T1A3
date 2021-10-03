@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="t1a3-terminal-application-nicholas-carr">T1A3 Terminal Application Nicholas Carr</h1>
+<h3 id="repository-link">Repository link</h3>
+<p>https://github.com/nickjcarr/NicholasCarr_T1A3</p>
+<h2 id="r5">R5</h2>
+<h2 id="develop-a-statement-of-purpose-and-scope-for-your-application">Develop a statement of purpose and scope for your application</h2>
+<p>As someone who has a keen interest in investing and how the stock market works, I decided to create a application that will allow a person to find out financial information about a company’s share price.</p>
+<h3 id="describe-at-a-high-level-what-the-application-will-do">Describe at a high level what the application will do</h3>
+<p>My application provides the user with information to guide them when investing in a share. This is done in 3 ways. The first is to show the current share value, the second is to show the price to earnings ratio of the company to see if the share is over or under valued, and the third way is to show the difference in price from one year ago and today. While I believe this information is not enough to decide on an investment, it is a very common way investors use, along with other resources, to decide.</p>
+<h3 id="identify-the-problem-it-will-solve-and-explain-why-you-are-developing-it">Identify the problem it will solve and explain why you are developing it</h3>
+<p>This application will help users solve how to make the price to earnings calculation without actually having to do the calculations. It gives the user a score and a recommendation on whether it is under or overvalued. It also shows the growth or decrease in share price from when using it and a year ago.</p>
+<h3 id="identify-the-target-audience">Identify the target audience</h3>
+<p>The target audience are people who are not savvy investors and would like to know what are the types of data professionals use when choosing a company to invest in. As I mentioned before, this is just one way of pricing a companys share worth and this message is given to the users when an output is given.</p>
+<h3 id="explain-how-a-member-of-the-target-audience-will-use-it">Explain how a member of the target audience will use it</h3>
+<p>The use of the application is very simple. When started, the user enters their name, and then is presented with the option to look up a share price, view a company’s price to earnings ratio, see the difference in value from one year ago and today and exit. The user chooses an option from entering 1,2,3 or 4. The user is then asked to enter the name of a company they would like to know about. If the company, doesn’t exist in the database, a message will tell the user this and ask to re-enter a company’s name. After the name is entered, the data is returned and given to the user, with the option to exit or make another enquiry.</p>
+<h2 id="r6">R6</h2>
+<h3 id="feature-1">Feature 1</h3>
+<p>The first feature is to check the current price of a share. It does this by returning data input by me, as I am not using an API (as I do not know how to use one yet). When entering the company name, an error message will appear if the company does not exist in the database. I do this by having an until loop which cross references the name with an array that has all the names stored in it. When a correct company name is entered, a message will return with the company share price that is taken from when creating a new instance of class object (done for each company). A when statement is then presented to ask the user if they would like to choose another feature, yes returning to the start menu, no exiting the application.</p>
+<h3 id="feature-2">Feature 2</h3>
+<p>The second feature uses the above company name until loop to check if it is in the database, as well as the option to go back to the menu or exit. When results return that it is in the database, the price to earnings ratio is returned. To determine whether the ratio represents an under or overvalued company, I used an if..else statement. This returns the ratio plus a statement saying whether it may be a safe or risky investment based on the ratio score. The ratio is calculated by using the instance variables in the class and then the pe ratio instance variable equalling an equation to compute it.</p>
+<h3 id="feature-3">Feature 3</h3>
+<p>The final feature allows the user to find the price history and difference in percentage from one year ago and today. It uses the above name check until statements, then returns the data. The data is come from the class I made which takes the input, then calculates the price difference by the use of another instance variable that is equalled to an equation.</p>
+<h2 id="r7-develop-an-outline-of-the-user-interaction-and-experience-for-the-application">R7 Develop an outline of the user interaction and experience for the application.</h2>
+<p>Interacting with this application will be very straightforward. I do not want the users to have to spend time figuring out how it works. I believe all applications should be like this as it can deter the user from continual use.
+To begin with, the user will be greeted with a ascii art logo of the application name, a greeting message in blue text, followed by a disclaimer stating that investing is risky, and that all given information is to be used at ones own risk. The user will then be asked to enter their name. If no name is entered, it will continue to ask their name in the form of “we would love to know your name” so it can personalise the experience, by using the name in other areas of the application.
+Once the name is entered, the user is given the message to choose from the following options. This message is in yellow, and the options are in green. There is no specific reason for these colours, other than they look nice on the black background. The user can choose the options from the menu by entering the number correlating to the option. The first three options are the functions available to use, whilst the last is the option to exit.
+When choosing 1, 2 or 3 the user is asked to enter the company name they would like to research. If a company is entered that is not in the database, the message “sorry, it seems that we do not have #{name} in our data. Please enter another company” will appear. This will continue to appear until a company in our database is entered.
+Once a company within our database is entered, the information is displayed, and the option to go back to the main menu is presented. If no is selected, it simply thanks the user for using our services and exits the application.</p>
+<h2 id="r8-flow-diagram">R8 flow diagram</h2>
+<p>My flow diagram can be found in the image below
+<img src="file:///images/R8.png" alt="flow diagram"></p>
+<h2 id="r10">R10</h2>
+<p>This application is very straightforward in terms of using it. The only gems I used were colorize, which was installed by the command gem install colorize. The other gem I used was artii, a gem which creates ascii art using gem install artii. I have included the gem files so the user will not need to install them, however if it is not working, the above commands can simply be installed.
+As I created a script in the bash file, this can simply be run by typing ./run_app.sh in the command line, or main.rb. As this is a command line application, the installation of Linux ubuntu is needed to run the application. As I have only loaded data from 20 tech companies for the user to utilise, is is recommended to try a search for facebook, google or tesla to get a result you are after. A connection to an API is my long term goal for this application.</p>
+
+</body>
+</html>
