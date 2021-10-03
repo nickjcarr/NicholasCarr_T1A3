@@ -10,7 +10,7 @@ class Company
         @last_year_price = last_year_price
         @eps = @earnings / @share_amount
         @pe_ratio = @share_price / @eps
-        @history_percentage = ((@share_price-@last_year_price)/@last_year_price) *100
+        @history_percentage = ((@share_price-@last_year_price)/((@last_year_price + share_price)/2) *100)
     end
 end
 

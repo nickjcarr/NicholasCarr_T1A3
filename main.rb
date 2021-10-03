@@ -1,34 +1,39 @@
-require_relative 'Shares'
+require_relative 'Shares' #link to shared page with the class on it
 
-require 'colorize'
-require 'artii'
+require 'colorize'#allows for coloured text
+require 'artii'#allows for ascii art
 
 
-
+#a list of the companies and their data to give to the user and make calculations
 @companies = { }
+@companies[:apple] = Company.new("apple", 274300000000, 16543988783, 142, 113)
+@companies[:samsung] = Company.new("samsung", 55560000000, 271706900, 1549, 1272)
+@companies[:foxconn] = Company.new("foxconn", 10300000000, 3078929306, 14.57, 16.08)
 
 
-
-@companies[:fortescue] = Company.new("fortescue", 10300000000, 3078929306, 14.57, 16.08)
-
-@search = ["fortescue"]
+#this array searches when company entered to make sure that it is in the database
+@search = ["apple", "samsung", "foxconn", ]
 
 def welcomemenu()
+    #ascii art
     a = Artii::Base.new
     a.asciify('Stock Watch')
     puts a.asciify("Stock Watch")
     
-    
+    #welcome and disclaimer note
     puts "Welcome to Stock Watch, an application that lets you find the value of a stock".blue 
-puts "DISCLAIMER!!! Investing is risky. The information we provide is for education purposes only. \n Any opinions we give our ours, and ours alone. Use of our information is done at ones own will."
+puts "DISCLAIMER!!! Investing is risky. The information we provide is for education purposes only. \n 
+Any opinions we give our ours, and ours alone. Use of our information is done at ones own will."
 
-    print "Please enter your name: "
+#enter name will not let you continue until a name is entered
+print "Please enter your name: "
     first_name = gets.strip
     system("clear")
     until first_name != ""
         puts "We would love to know your name"
         first_name = gets.strip
     end
+    #selection menu
  puts "#{first_name} please choose one of the following options: ".yellow
  puts 
  puts "1- View a stock price of a company.".green
@@ -73,9 +78,9 @@ when 2
         name = gets.strip.downcase
     end
     if @companies[name.to_sym].pe_ratio > 15
- puts  "The PE ratio of ""#{name}"" is  ""#{@companies[name.to_sym].pe_ratio}. This seems to be an over valued company at the moment and is a bit risky"
+ puts  "The PE ratio of ""#{name}"" is  ""#{@companies[name.to_sym].pe_ratio.to_i}. This seems to be an over valued company at the moment and is a bit risky"
     else
- puts  "The PE ratio of ""#{name}"" is  ""#{@companies[name.to_sym].pe_ratio}. This seems to be an under valued company at the moment and could be a wise investment."
+ puts  "The PE ratio of ""#{name}"" is  ""#{@companies[name.to_sym].pe_ratio.to_i}. This seems to be an under valued company at the moment and could be a wise investment."
     end
  puts "Would you like to choose another feature? - #{"Type Yes/No"}"
    answer = gets.strip
@@ -97,7 +102,7 @@ when 3
         name = gets.strip.downcase
     end
   
-puts  "One year ago today, the price of #{name} was #{@companies[name.to_sym].last_year_price}. Today is is #{@companies[name.to_sym].share_price}. The difference is #{@companies[name.to_sym].history_percentage} %."
+puts  "One year ago today, the price of #{name} was #{@companies[name.to_sym].last_year_price}. Today is is #{@companies[name.to_sym].share_price}. The difference is #{@companies[name.to_sym].history_percentage.to_i} %."
 puts "Would you like to choose another feature? - #{"Type Yes/No"}"
 answer = gets.strip
 case (answer)
