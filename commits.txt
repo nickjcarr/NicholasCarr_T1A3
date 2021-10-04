@@ -1,3 +1,9 @@
+commit eb7914568311962253c499ae77de9465a22358cc
+Author: nickjcarr <cam022118@coderacademy.edu.au>
+Date:   Sun Oct 3 17:15:02 2021 +0800
+
+    final altercations and ready for submission.
+
 commit 95ee287744aa512d239312a328b660c83f2ac0bc
 Author: nickjcarr <cam022118@coderacademy.edu.au>
 Date:   Sun Oct 3 14:48:09 2021 +0800
